@@ -54,6 +54,22 @@ module Archiver
       LibTar.th_write(@t)
     end
     
+    def th_set_type(mode : LibTar::ModeT)
+      LibTar.th_set_type(mode)
+    end
+    
+    def th_set_path(pathname : String)
+      LibTar.th_set_path(@t, pathname)
+    end
+    
+    def th_set_link(linkname : String)
+      LibTar.th_set_link(@t, linkname)
+    end
+    
+    def th_set_device(device : LibTar::DevT)
+      LibTar.th_set_device(@t, device)
+    end
+    
     def append_eof
       LibTar.tar_append_eof(@t)
     end
