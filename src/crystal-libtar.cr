@@ -45,6 +45,38 @@ module Archiver
     def append_regfile(realname : String)
       LibTar.tar_append_regfile(@t, realname)
     end
+
+    def tar_extract_file(realname : String) : Int32
+      LibTar.tar_extract_file(@t, realname)
+    end
+    
+    def tar_extract_dir(realname : String) : Int32
+      LibTar.tar_extract_dir(@t, realname)
+    end
+    
+    def tar_extract_hardlink(realname : String) : Int32
+      LibTar.tar_extract_hardlink(@t, realname)
+    end
+    
+    def tar_extract_symlink(realname : String) : Int32
+      LibTar.tar_extract_symlink(@t, realname)
+    end
+    
+    def tar_extract_chardev(realname : String) : Int32
+      LibTar.tar_extract_symlink(@t, realname)
+    end
+    
+    def tar_extract_blockdev(realname : String) : Int32
+      LibTar.tar_extract_blockdev(@t, realname)
+    end
+    
+    def tar_extract_fifo(realname : String) : Int32
+      LibTar.tar_extract_fifo(@t, realname)
+    end
+    
+    def tar_extract_regfile(realname : String) : Int32
+      LibTar.tar_extract_regfile(@t, realname)
+    end
     
     def th_read
       LibTar.th_read(@t)
